@@ -53,7 +53,7 @@ PKG_CHECK_MODULES([liballium], [liballium-1.0 >= 0.0.1])
 oldCPPFLAGS=$CPPFLAGS
 oldLDFLAGS=$LDFLAGS
 CPPFLAGS="$CPPFLAGS $liballium_CFLAGS $libevent_CFLAGS"
-LDFLAGS="$LDFLAGS $liballium_LIBS $libevent_LIBS"
+LIBS="$liballium_LIBS $libevent_LIBS $LIBS"
 AC_LINK_IFELSE([AC_LANG_PROGRAM([#include <allium/allium.h>],
                                 [(void)allium_ptcfg_init();])],
                [],
